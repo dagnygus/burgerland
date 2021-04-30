@@ -1,0 +1,30 @@
+@use '../../../extra-styles/elevation-mixins' as *;
+@use '../../../extra-styles/colors' as *;
+
+:host {
+  display: grid;
+  margin: 16px auto;
+  padding: 16px 8px;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 32px;
+  gap: 8px;
+  text-align: center;
+  @include elevation-mixin(2);
+
+  @media (min-width: 47rem) {
+    grid-column: 2 / span 1;
+    width: 99%;
+  }
+}
+
+.order-success__title {
+  font-family: 'Luciest guy';
+  color: green;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.order-success__btn-container {
+  display: flex;
+  justify-content: center;
+}

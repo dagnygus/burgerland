@@ -1,0 +1,27 @@
+@use '../../../extra-styles/elevation-mixins' as *;
+@use '../../../extra-styles/colors' as *;
+
+:host {
+  display: grid;
+  margin: 16px auto;
+  padding: 16px 32px;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 32px;
+  gap: 8px;
+  @include elevation-mixin(2);
+
+  @media (min-width: 47rem) {
+    grid-column: 2 / span 1;
+    width: 99%;
+  }
+}
+
+.cart__greater {
+  text-align: center;
+  font-family: 'Luciest guy';
+  letter-spacing: 2px;
+  color: $main-color;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  margin: 8px 0;
+}

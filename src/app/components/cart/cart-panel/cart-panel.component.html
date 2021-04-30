@@ -1,0 +1,9 @@
+<div class="cart-panel__total-price-container">
+  <span>Total price: {{ cartStateManager?.totalPrice }}$</span>
+</div>
+<button class="btn btn-main-gradient"
+   (click)="$any(this)._makeOrder.emit()">Make Order</button>
+<button class="btn btn-accent-gradient"
+        (click)="$any(this)._clearCart.emit()">
+  Clear Cart
+</button>

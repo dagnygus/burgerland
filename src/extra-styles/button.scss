@@ -1,0 +1,45 @@
+@use './colors' as *;
+@use './elevation-mixins' as *;
+@use './animations.scss' as *;
+
+.btn {
+  outline: none;
+  padding: .7em .7em;
+  font-family: inherit;
+  font-size: 1em;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 16px;
+  border: none;
+  @include elevation-mixin(2);
+}
+
+.btn-main {
+  background-color: $main-color;
+  color: white;
+}
+
+.btn-main-gradient {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom right, $main-color 50%, darken($main-color, 20%));
+}
+
+.btn-accent {
+  background-color: $accent-color;
+  color: white;
+}
+
+.btn-accent-gradient {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom right, $accent-color 50%, darken($accent-color, 20%));
+}
+
+.btn:active {
+  @include button-jump-mixin;
+}
+
+.btn:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}

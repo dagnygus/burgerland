@@ -1,0 +1,18 @@
+<app-product-modal #productModal
+                   [cartStateManager]="cartStateManager"></app-product-modal>
+
+<ng-container *ngIf="productsStateManager.stateInitialized">
+  <app-products-item *ngFor="let item of productsStateManager.state; trackBy: productsStateManager.trackFn"
+                     [product]="item"
+                     (selected)="cartStateManager.setSelectedItemFromSelectedProduct(item);
+                                productModal.markForCheckLocaly();
+                                productModal.open = true;"></app-products-item>
+</ng-container>
+<ng-container *ngIf="productsStateManager.statePending">
+  <app-product-item-placeholder></app-product-item-placeholder>
+  <app-product-item-placeholder></app-product-item-placeholder>
+  <app-product-item-placeholder></app-product-item-placeholder>
+  <app-product-item-placeholder></app-product-item-placeholder>
+  <app-product-item-placeholder></app-product-item-placeholder>
+  <app-product-item-placeholder></app-product-item-placeholder>
+</ng-container>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "product41",
+    "name": "French Fries",
+    "price": 4,
+    "imageUrl": "/assets/images/products/frenchfriesother.jpg"
+  },
+  {
+    "id": "product42",
+    "name": "Onion Rings",
+    "price": 4,
+    "imageUrl": "/assets/images/products/onionringsother.jpg"
+  },
+  {
+    "id": "product43",
+    "name": "Nachos",
+    "price": 5,
+    "imageUrl": "/assets/images/products/nachosother.jpg"
+  },
+  {
+    "id": "product44",
+    "name": "Popcorn",
+    "price": 3,
+    "imageUrl": "/assets/images/products/popcornother.jpg"
+  },
+  {
+    "id": "product45",
+    "name": "Strips",
+    "price": 4,
+    "imageUrl": "/assets/images/products/stripsother.jpg"
+  },
+  {
+    "id": "product46",
+    "name": "Baked Potato",
+    "price": 5,
+    "imageUrl": "/assets/images/products/bakedpotatoother.jpg"
+  },
+  {
+    "id": "product47",
+    "name": "Tortilla Wrap",
+    "price": 4,
+    "imageUrl": "/assets/images/products/tortillawrapother.png"
+  },
+  {
+    "id": "product48",
+    "name": "Taco",
+    "price": 5,
+    "imageUrl": "/assets/images/products/tacoother.jpg"
+  }
+]

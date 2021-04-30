@@ -1,0 +1,81 @@
+<div class="header__inner-container">
+  <div class="header__inner-inner-container">
+    <a routerLink="/">
+      <h1 class="header__title" #burgerlandLogo>BURGERLAND</h1>
+    </a>
+    <button class="header__burgerland-button"
+            #burgerlandMenuButton
+            (click)="dropdownOpen = !dropdownOpen;
+                     markForCheckLocaly()">
+    </button>
+    <div class="header__auth-btn-group"
+         [class.heder__auth-btn-group-logged]="authStateManager.state">
+      <ng-container *ngIf="!authStateManager.state else authHeaderTemplate">
+        <a class="btn btn-main-gradient header__btn-entry" routerLink="/register"><i class="fas fa-user-plus"></i> Register</a>
+        <a class="btn btn-main-gradient header__btn-entry" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
+      </ng-container>
+      <ng-template #authHeaderTemplate>
+        <span class="header__greeter-message">Welcome {{authStateManager.state?.firstName}}</span>
+        <button class="btn btn-main-gradient header__btn-entry" (click)="authStateManager.signOut()"><i class="fas fa-sign-out-alt"></i> Log out</button>
+      </ng-template>
+      <a class="btn btn-accent-gradient header__btn-entry" routerLink="/cart">
+        <i class="fas fa-shopping-basket"></i> {{ cartStateManager.state!.length }} Items
+      </a>
+    </div>
+  </div>
+</div>
+<div class="header__dropdown-menu-container" [class.open]="dropdownOpen">
+  <div class="header__dropdown-menu">
+    <nav>
+      <div class="header__btn-group">
+        <ng-container *ngIf="!authStateManager.state else authTemplate">
+          <a class="btn btn-main-gradient"
+          routerLink='/login'
+          (click)="dropdownOpen = false; markForCheckLocaly()">
+            <i class="fas fa-sign-in-alt"></i> Log in
+          </a>
+          <a class="btn btn-main-gradient"
+              routerLink="/register"
+              (click)="dropdownOpen = false; markForCheckLocaly()">
+            <i class="fas fa-user-plus"></i> Register
+          </a>
+        </ng-container>
+        <ng-template #authTemplate>
+          <button class="btn btn-main-gradient"
+                  (click)="dropdownOpen = false;
+                           authStateManager.signOut()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+          </button>
+        </ng-template>
+        <button class="header__close-button"
+                (click)="dropdownOpen = false; markForCheckLocaly()">
+          <i class="far fa-times-circle"></i>
+        </button>
+      </div>
+      <div class="header__cart-btn-container">
+        <a class="btn btn-accent-gradient"
+           routerLink="/cart"
+           (click)="dropdownOpen = false; markForCheckLocaly()">
+          <i class="fas fa-shopping-basket"></i> {{cartStateManager.state?.length}} Items
+        </a>
+      </div>
+      <ul (click)="dropdownOpen = false; markForCheckLocaly()">
+        <li>
+          <a [routerLink]="['/products', 'burgers']"><div class="header__burger-icon header__link-icon"></div><span>Burgers</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/products', 'salads']"><div class="header__salad-icon header__link-icon"></div><span>Salads</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/products', 'drinks']"><div class="header__drink-icon header__link-icon"></div><span>Drinks</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/products', 'desserts']"><div class="header__ice-creem-icon header__link-icon"></div><span>Desserts</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/products', 'others']"><div class="header__others-icon header__link-icon"></div><span>Others</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

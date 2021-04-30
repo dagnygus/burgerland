@@ -1,0 +1,106 @@
+@use '../../../extra-styles/colors' as *;
+@use '../../../extra-styles/elevation-mixins' as *;
+@use '../../../extra-styles/animations' as *;
+
+:host {
+  display: none;
+  grid-column: 1 / span 1;
+  position: fixed;
+  width: 33.5%;
+  max-width: 402px;
+
+  & > nav {
+    width: 100%;
+    align-self: flex-start;
+    justify-self: center;
+    width: 96%;
+    border-radius: 32px;
+    @include elevation-mixin(2);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    margin-top: 16px;
+    @include elevation-mixin(2)
+  }
+
+  @media (min-width: 47rem) {
+    display: grid;
+  }
+}
+
+.sidebar__nav-list {
+  display: grid;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  gap: 4px;
+
+  & > li {
+    width: 100%;
+    border: 1px solid $accent-color;
+    border-radius: 32px;
+    padding: 8px;
+    font-size: 1.2em;
+    @include elevation-mixin(4);
+    background-image: linear-gradient(to bottom right, transparent, lighten($accent-color, 20%));
+
+    &:active {
+      @include button-jump-mixin;
+    }
+  }
+
+  & > li > a {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.sidebar__nav-link {
+  transform: translateX(-75%);
+  opacity: 0;
+  transition: transform 400ms cubic-bezier(.36,.6,.66,1.69),
+              opacity 250ms ease-out;
+}
+
+.sidebar__nav-link-entry {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar__link-icon {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+  justify-self: flex-end;
+  border-left: 3px solid $main-color;
+  border-top: 2px solid $main-color;
+  border-right: 3px solid $main-color;
+  border-bottom: 4px solid $main-color;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.sidebar__burger-icon {
+  background: url(/assets/images/burger_image.png) center/80% no-repeat border-box;
+}
+
+.sidebar__salad-icon {
+  background: url(/assets/images/salad.svg) center/80% no-repeat border-box;
+}
+
+.sidebar__drink-icon {
+  background: url(/assets/images/soda-cup.png) center/80% no-repeat border-box;
+}
+
+.sidebar__ice-creem-icon {
+  background: url(/assets/images/ice_cream.png) center/80% no-repeat border-box;
+}
+
+.sidebar__others-icon {
+  background: url(/assets/images/fries.png) center/80% no-repeat border-box;
+}

@@ -1,0 +1,53 @@
+@use '../../../../extra-styles/colors.scss' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+:host(.open) {
+  opacity: 1;
+  pointer-events: all;
+
+  & > .clear-cart-modal__container {
+    transform: scale(1);
+  }
+}
+
+.clear-cart-modal__container {
+  width: 90%;
+  max-width: 400px;
+  background-image: linear-gradient(to bottom, $accent-color, darken($accent-color, 20%));
+  border-radius: 16px;
+  padding: 32px;
+  display: grid;
+  transform: scale(0.5);
+  transition: transform 200ms ease-out;
+}
+
+.clear-cart-modal__body {
+  text-align: center;
+}
+
+.clear-cart-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-cart-modal__btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px
+}

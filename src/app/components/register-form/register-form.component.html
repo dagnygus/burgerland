@@ -1,0 +1,95 @@
+<form class="burgerland-form"
+      #registerFrom="ngForm"
+      [rxwebForm]="registerFrom"
+      (input)="markForCheckLocaly()"
+      (ngSubmit)="authStateManager.signUp()">
+  <p style="text-align: center;">
+    Complate the form to register new account.
+    If you already have account, please <a class="link" routerLink="/login">sign in</a> now.
+  </p>
+  <div class="burgerland-form__input-group">
+    <label for="firstName">First Name</label>
+    <input type="text"
+           name="firstName"
+           [(ngModel)]="authStateManager.firstName"
+           #firstNameInput="ngModel"
+           [rxrequired]="{ message: 'First name is required!' }"
+           [rxalpha]="{ message: 'First name must contain alphabetic letters!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="firstNameInput.invalid && firstNameInput.touched && firstNameInput.dirty">
+      <li *dnngFor="let prop in firstNameInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="lastName">Last Name</label>
+    <input type="text"
+           name="lastName"
+           #lastNameInput="ngModel"
+           [(ngModel)]="authStateManager.lastName"
+           [rxrequired]="{ message: 'Last name is required!' }"
+           [rxalpha]="{ message: 'Last name must contain alphabetic letters!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="lastNameInput.invalid && lastNameInput.touched && lastNameInput.dirty">
+      <li *dnngFor="let prop in lastNameInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="email">E-mail Address</label>
+    <input type="text"
+           name="email"
+           #emailInput="ngModel"
+           [(ngModel)]="authStateManager.email"
+           [rxrequired]="{ message: 'Address E-mail is required!' }"
+           [rxemail]="{ message: 'Incorect format of E-mail Address!' }"
+           [appEmailAlreadyInUseValidator]="authStateManager"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="emailInput.invalid && emailInput.touched && emailInput.dirty">
+      <li *dnngFor="let prop in emailInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="password">Password</label>
+    <input type="password"
+           name="password"
+           #passwordInput="ngModel"
+           [(ngModel)]="authStateManager.password"
+           [rxrequired]="{ message: 'Password is required!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="passwordInput.invalid && passwordInput.touched && passwordInput.dirty">
+      <li *dnngFor="let prop in passwordInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password"
+           name="confirmPassword"
+           #confirmPasswordInput="ngModel"
+           [(ngModel)]="authStateManager.confirmPassword"
+           [rxrequired]="{ message: 'This field is required!' }"
+           [rxcompare]="{ fieldName: 'password', message: 'Password not match!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched && confirmPasswordInput.dirty">
+      <li *dnngFor="let prop in confirmPasswordInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__buttons">
+    <div class="burgerland-form__buttons-container">
+      <button class="btn btn-main-gradient"
+              type="submit"
+              (click)="authStateManager.canExecuteSignUp = !registerFrom.invalid;
+                       $any(this).submitButtonClick(registerFrom)"
+              [disabled]="!registerFrom.valid">Register</button>
+      <a class="btn btn-accent-gradient" routerLink="/">Cancel</a>
+    </div>
+  </div>
+</form>

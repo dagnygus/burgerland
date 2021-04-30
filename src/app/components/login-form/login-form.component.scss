@@ -1,0 +1,26 @@
+@use '../../../extra-styles/elevation-mixins' as *;
+@use '../../../extra-styles/colors' as *;
+
+:host {
+  display: grid;
+  margin: 16px auto;
+  padding: 16px 8px;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 32px;
+  @include elevation-mixin(2);
+
+  @media (min-width: 47rem) {
+    grid-column: 2 / span 1;
+    width: 99%;
+  }
+}
+
+.login-form__warning-container {
+  border-radius: 16px;
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+  padding: 0 16px;
+  @include elevation-mixin(2);
+}

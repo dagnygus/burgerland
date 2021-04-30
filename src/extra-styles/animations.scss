@@ -1,0 +1,12 @@
+@keyframes button-jump {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin button-jump-mixin {
+  animation: button-jump 150ms ease-out;
+}

@@ -1,0 +1,29 @@
+<div class="order-modal__container">
+  <ng-container *ngIf="authStateManager.state else modalTemplate">
+    <h1 class="order-modal__title">Make Your Order Now!</h1>
+    <div class="burgerland-form__input-group">
+      <label for="date">Choose date</label>
+      <input type="date" name="date">
+    </div>
+    <div class="burgerland-form__input-group">
+      <label for="time">Choose time</label>
+      <input type="time">
+    </div>
+    <div class="order-modal__btn-group">
+      <div class="order-modal__buttons-container">
+        <button class="btn btn-main-gradient"
+                (click)="_riseMakeOrder()">Order Now</button>
+        <button class="btn btn-accent-gradient"
+                (click)="open = false">Cancel</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #modalTemplate>
+    <h1 style="text-align: center;">To make an order you need to be logged!</h1>
+    <div class="order-modal__btn-auth-group">
+      <a class="btn btn-main" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+      <a class="btn btn-main" routerLink="/register"><i class="fas fa-user-plus"></i> Register</a>
+    </div>
+  </ng-template>
+</div>

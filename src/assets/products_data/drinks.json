@@ -1,0 +1,62 @@
+[
+  {
+    "id": "product21",
+    "name": "Pepsi",
+    "price": 2,
+    "imageUrl": "/assets/images/products/pepsidrink.jpg"
+  },
+  {
+    "id": "product22",
+    "name": "Pepsi Max",
+    "price": 2,
+    "imageUrl": "/assets/images/products/pepsimaxdrink.jpg"
+  },
+  {
+    "id": "product23",
+    "name": "Sprite",
+    "price": 2,
+    "imageUrl": "/assets/images/products/spritedrink.jpg"
+  },
+  {
+    "id": "product24",
+    "name": "Sprite Zero",
+    "price": 2,
+    "imageUrl": "/assets/images/products/spritezerodrink.jpg"
+  },
+  {
+    "id": "product25",
+    "name": "Fanta",
+    "price": 2,
+    "imageUrl": "/assets/images/products/fantadrink.jpg"
+  },
+  {
+    "id": "product26",
+    "name": "7UP",
+    "price": 2,
+    "imageUrl": "/assets/images/products/sevenupdrink.jpg"
+  },
+  {
+    "id": "product27",
+    "name": "7UP Free",
+    "price": 2,
+    "imageUrl": "/assets/images/products/sevenupfreedrink.jpg"
+  },
+  {
+    "id": "product28",
+    "name": "Dr. Pepper",
+    "price": 2,
+    "imageUrl": "/assets/images/products/drpepperdrink.jpg"
+  },
+  {
+    "id": "product29",
+    "name": "Dr. Pepper Zero",
+    "price": 2,
+    "imageUrl": "/assets/images/products/drpepperzerodrink.jpg"
+  },
+  {
+    "id": "product30",
+    "name": "Coca Cola",
+    "price": 2,
+    "imageUrl": "/assets/images/products/cocacoladrink.jpg"
+  }
+]

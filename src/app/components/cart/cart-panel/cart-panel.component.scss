@@ -1,0 +1,30 @@
+@use '../../../../extra-styles/elevation-mixins.scss' as *;
+
+:host {
+  display: grid;
+  padding: 16px;
+  grid-template-columns: 3fr 1fr 1fr;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2) 30%, lightgray);
+  gap: 4px;
+  border-radius: 16px;
+  margin-top: 32px;
+  width: 100%;
+  justify-self: center;
+  max-width: 560px;
+  @include elevation-mixin(2);
+
+  @media (min-width: 30rem) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.cart-panel__total-price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn {
+  font-size: 0.9em;
+}

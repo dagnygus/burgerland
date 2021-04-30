@@ -1,0 +1,18 @@
+<div class="product-item__image-container">
+  <div class="product-item__image-frame">
+    <div class="product-item__image"
+         [style.background-image]="'url(' + product?.imageUrl + ')'"></div>
+  </div>
+</div>
+<div class="priduct-item__name-container">
+  <h4 class="product-item__name">{{ product?.name }}</h4>
+</div>
+<div class="product-item__price-container">
+  <p class="product-item__price">Price: {{ product?.price }}$</p>
+</div>
+<div class="product-item__button-container">
+  <button class="btn btn-main-gradient product-item__btn"
+          (click)="$any(this)._selected.emit()">
+    <i class="fas fa-plus"></i> <i class="fas fa-shopping-basket"></i>
+  </button>
+</div>

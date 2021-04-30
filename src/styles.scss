@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@use './extra-styles/font-families' as *;
+@use './extra-styles/colors' as *;
+@use './extra-styles/button' as *;
+@use './extra-styles/form-styles.scss' as *;
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom right, $main-color, $accent-color);
+  background-attachment: fixed;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+router-outlet {
+  display: none;
+}
+
+a.link {
+  text-decoration: underline;
+  color: $accent-color;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+<div class="clear-cart-modal__container">
+  <div class="clear-cart-modal__body">
+    <h2>Are you sure you want to remove all your items from cart?</h2>
+  </div>
+  <div class="clear-cart-modal__footer">
+    <div class="clear-cart-modal__btn-group">
+      <button class="btn btn-main-gradient"
+              (click)="$any(this)._clearCart.emit(); open = false">
+        <i class="fas fa-trash-alt"></i> YES
+      </button>
+      <button class="btn btn-accent-gradient"
+              (click)="open = false">
+        <i class="fas fa-times"></i> NO
+      </button>
+    </div>
+  </div>
+</div>

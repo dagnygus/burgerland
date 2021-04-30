@@ -1,0 +1,73 @@
+@use './elevation-mixins.scss' as *;
+
+.burgerland-form {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+  justify-self: center;
+  max-width: 320px;
+}
+
+.burgerland-form__input-group {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 4px;
+  justify-content: flex-start;
+  font-size: 1.1em;
+
+  & > input[type=text], & > input[type=password], & > input[type=date], & > input[type=time] {
+    justify-self: stretch;
+    width: 100%;
+    outline: none;
+    padding: 0.4em;
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid black;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom right, transparent, lightgray);
+    @include elevation-mixin(2)
+  }
+
+  & > ul {
+    color: red;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+.burgerland-form__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.burgerland-form__buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+input.ng-touched.ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-touched.ng-dirty.ng-valid {
+  border: 1px solid green;
+}
+
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+    /* use animation hack, if you have hard styled input */
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+    /* if input has one color, and didn't have bg-image use shadow */
+    -webkit-box-shadow: 0 0 0 1000px #000 inset;
+    /* text color */
+    -webkit-text-fill-color: black;
+    /* font weigth */
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "product31",
+    "name": "Waffle",
+    "price": 4,
+    "imageUrl": "/assets/images/products/waffledessert.jpg"
+  },
+  {
+    "id": "product32",
+    "name": "Ice Cream",
+    "price": 3,
+    "imageUrl": "/assets/images/products/icecreamdessert.png"
+  },
+  {
+    "id": "product33",
+    "name": "Pancake",
+    "price": 4,
+    "imageUrl": "/assets/images/products/pancakedessert.jpg"
+  },
+  {
+    "id": "product34",
+    "name": "Cake",
+    "price": 3,
+    "imageUrl": "/assets/images/products/cakedessert.jpg"
+  },
+  {
+    "id": "product35",
+    "name": "Cookies",
+    "price": 3,
+    "imageUrl": "/assets/images/products/cookiesdessert.jpg"
+  },
+  {
+    "id": "product36",
+    "name": "Pudding",
+    "price": 4,
+    "imageUrl": "/assets/images/products/puddingdessert.jpg"
+  },
+  {
+    "id": "product37",
+    "name": "Fried Banana",
+    "price": 4,
+    "imageUrl": "/assets/images/products/friedbananadessert.jpg"
+  },
+  {
+    "id": "product38",
+    "name": "Candied Apple",
+    "price": 3,
+    "imageUrl": "/assets/images/products/candiedappledessert.jpg"
+  },
+  {
+    "id": "product39",
+    "name": "Apple Pie",
+    "price": 4,
+    "imageUrl": "/assets/images/products/applepiedessert.jpg"
+  },
+  {
+    "id": "product40",
+    "name": "Sweet Rice",
+    "price": 4,
+    "imageUrl": "/assets/images/products/sweetricedessert.jpg"
+  }
+]

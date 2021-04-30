@@ -1,0 +1,63 @@
+<app-burgerlad-carousel></app-burgerlad-carousel>
+<div class="home__greeter-1-container">
+  <h1 class="home__greeter-1" #greeterOne>
+    Welcome to
+  </h1>
+</div>
+<div class="home__image-container">
+  <div class="home__burgerland-image"></div>
+</div>
+<div class="home__greeter-2-container">
+  <h1 class="home__greeter-2" #greeterTwo>BURGRLAND</h1>
+</div>
+<div class="home__greeter" *ngIf="authStateManager.state">
+  <h2>
+    Welcome {{ authStateManager.state?.firstName }}. It's great to have you here.
+  </h2>
+</div>
+<div class="home__widgets-container">
+  <div class="home__widget">
+    <div class="home__widget-vege-image"></div>
+    <div class="home__widget-title">
+      <h2>Natural Vegetables</h2>
+    </div>
+    <div class="home__widget-body">
+      <p>
+        Natural vegetables from certified farms. No poisonous chemicals were used.
+        Free from genetic modification.
+      </p>
+    </div>
+  </div>
+  <div class="home__widget">
+    <div class="home__widget-meet-image"></div>
+    <div class="home__widget-title">
+      <h2>Fresh Meet</h2>
+    </div>
+    <div class="home__widget-body">
+      <p>
+        Free-bred meat. No antibiotics were used during breeding.
+        Animals fed only with natural fodder. Free range.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="home__message-content">
+  <p>
+    We guarantee 100% freshness and quality. Our chefs put their whole heart into
+    creating our products. We share a common passion for cooking. Here you will find
+    flavors that caress the palate, making you feel like in heaven. Everything for a
+    really decent price. Give yourself and your family the pleasure of spending time
+    together. Give yourself to the senses of our wonderful, original beef, seasoned with
+    oriental ingredients. With us you will experience pleasure that you will not find
+    anywhere else. Don't wait. Register on our website. Enjoy your meal.
+  </p>
+</div>
+<div class="home__btn-group" *ngIf="!authStateManager.state">
+  <a class="btn btn-main home__btn"
+     routerLink="/login">
+    <i class="fas fa-sign-in-alt"></i> Log in
+  </a>
+  <a class="btn btn-main home__btn"
+     routerLink="/register"><i class="fas fa-user-plus"></i> Register
+  </a>
+</div>

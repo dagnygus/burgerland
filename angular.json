@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "burgerland"
+  "defaultProject": "burgerland",
+  "cli": {
+    "analytics": false
+  }
 }

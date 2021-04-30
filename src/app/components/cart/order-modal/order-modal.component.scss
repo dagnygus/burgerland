@@ -1,0 +1,70 @@
+@use '../../../../extra-styles/colors.scss' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+:host(.open) {
+  pointer-events: all;
+  opacity: 1;
+
+  & > .order-modal__container {
+    transform: scale(1);
+  }
+}
+
+.order-modal__container {
+  width: 90%;
+  max-width: 400px;
+  background-image: linear-gradient(to bottom, $accent-color, darken($accent-color, 20%));
+  border-radius: 16px;
+  padding: 32px;
+  display: grid;
+  gap: 8px;
+  transform: scale(0.5);
+  transition: transform 200ms ease-out;
+}
+
+.order-modal__title {
+  font-family: 'Luciest guy';
+  text-align: center;
+  color: $main-color;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.order-modal__btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-modal__buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: .8em;
+  margin-top: 16px;
+}
+
+.order-modal__btn-auth-group {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 8px;
+  & > .btn {
+    grid-column: 2 / span 1;
+    text-align: center;
+    font-size: 0.9em;
+  }
+}

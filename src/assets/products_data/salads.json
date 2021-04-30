@@ -1,0 +1,62 @@
+[
+  {
+    "id": "product11",
+    "name": "Greek Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/greeksalad.jpg"
+  },
+  {
+    "id": "product12",
+    "name": "Greek Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/frenchsalad.jpg"
+  },
+  {
+    "id": "product13",
+    "name": "Italian Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/italiansalad.jpg"
+  },
+  {
+    "id": "product14",
+    "name": "Hawaiian Salad",
+    "price": 4,
+    "imageUrl": "/assets/images/products/hawaiiansalad.jpg"
+  },
+  {
+    "id": "product15",
+    "name": "Oriental Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/orientalsalad.jpg"
+  },
+  {
+    "id": "product16",
+    "name": "Chicken Salad",
+    "price": 4,
+    "imageUrl": "/assets/images/products/chickensalad.jpg"
+  },
+  {
+    "id": "product17",
+    "name": "Summer Salad",
+    "price": 5,
+    "imageUrl": "/assets/images/products/summersalad.jpg"
+  },
+  {
+    "id": "product18",
+    "name": "Potato Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/potatosalad.png"
+  },
+  {
+    "id": "product19",
+    "name": "Potato Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/potatosalad.png"
+  },
+  {
+    "id": "product20",
+    "name": "Mexican Salad",
+    "price": 3,
+    "imageUrl": "/assets/images/products/mexicansalad.jpg"
+  }
+]

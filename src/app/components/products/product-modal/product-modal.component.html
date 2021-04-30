@@ -1,0 +1,47 @@
+<div class="product-modal__container">
+  <div class="product-modal__image-container">
+    <div class="product-modal__image-frame">
+      <div class="product-modal__image"
+           [style.background-image]="cartStateManager?.selectedItem ? 'url(' + cartStateManager?.selectedItem?.imageUrl + ')' : ''"></div>
+    </div>
+  </div>
+  <div class="product-modal__name-container">
+    <h1 class="product-modal__name">{{ cartStateManager?.selectedItem?.name }}</h1>
+  </div>
+  <div class="product-modal__price-container">
+    <p>Price: {{ cartStateManager?.selectedItem?.price | itemPrice:cartStateManager?.selectedItem?.quantity}}$</p>
+  </div>
+  <div class="product-modal__quantity-container">
+    <button class="product-modal__btn"
+            (click)="cartStateManager?.decreaseQuantityOfSelectedItem();
+                     markForCheckLocaly()">
+      <i class="fas fa-minus"></i>
+    </button>
+    <div class="product-modal__count">{{ cartStateManager?.selectedItem?.quantity }}</div>
+    <button class="product-modal__btn"
+            (click)="cartStateManager?.increaseQuantityOfSelectedItem();
+                     markForCheckLocaly()">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <div class="product-modal__btn-group">
+    <button class="btn btn-main-gradient"
+            (click)="cartStateManager?.addSelectedItemToCart();
+                     cartStateManager?.clearSelection();
+                     open = false;">
+      <i class="fas fa-plus"></i> Add and continue
+    </button>
+    <button class="btn btn-main-gradient"
+            (click)="cartStateManager?.addSelectedItemToCart();
+                     cartStateManager?.clearSelection();
+                     open = false;
+                     $any(this).navigateToCart()">
+      <i class="fas fa-cart-plus"></i> Add and go to cart
+    </button>
+    <button class="btn btn-accent-gradient"
+            (click)="cartStateManager?.clearSelection();
+            open = false;">
+      <i class="fas fa-times"></i> Cancel
+    </button>
+  </div>
+</div>

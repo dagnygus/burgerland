@@ -1,0 +1,62 @@
+[
+  {
+    "id": "product1",
+    "name": "Hamburger",
+    "price": 5,
+    "imageUrl": "/assets/images/products/hamburger.jpg"
+  },
+  {
+    "id": "product2",
+    "name": "Cheesburger",
+    "price": 6,
+    "imageUrl": "/assets/images/products/cheesburger.jpg"
+  },
+  {
+    "id": "product3",
+    "name": "Chickenburger",
+    "price": 5,
+    "imageUrl": "/assets/images/products/chickenburger.jpg"
+  },
+  {
+    "id": "product4",
+    "name": "Fishburger",
+    "price": 6,
+    "imageUrl": "/assets/images/products/fishburger.jpg"
+  },
+  {
+    "id": "produc5",
+    "name": "Sweet Chili Burger",
+    "price": 7,
+    "imageUrl": "/assets/images/products/sweetchiliburger.jpg"
+  },
+  {
+    "id": "produc6",
+    "name": "Baconburger",
+    "price": 5,
+    "imageUrl": "/assets/images/products/baconburger.jpg"
+  },
+  {
+    "id": "produc7",
+    "name": "Bigburger",
+    "price": 5,
+    "imageUrl": "/assets/images/products/bigburger.jpg"
+  },
+  {
+    "id": "produc8",
+    "name": "BBQ Burger",
+    "price": 5,
+    "imageUrl": "/assets/images/products/bbqburger.jpg"
+  },
+  {
+    "id": "produc9",
+    "name": "Oriental Burger",
+    "price": 7,
+    "imageUrl": "/assets/images/products/orientalburger.jpg"
+  },
+  {
+    "id": "produc10",
+    "name": "Burger Wege",
+    "price": 4,
+    "imageUrl": "/assets/images/products/wegeburger.jpg"
+  }
+]

@@ -1,0 +1,262 @@
+@use '../../../extra-styles/colors' as *;
+@use '../../../extra-styles/elevation-mixins' as *;
+@use '../../../extra-styles/animations';
+
+:host {
+  display: grid;
+  justify-content: stretch;
+  align-items: stretch;
+  background-image: linear-gradient(to bottom, $main-color 50%, darken($main-color, 25%));
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  position: fixed;
+  // border: 2px solid black;
+  z-index: 100;
+  transition: transform 0 linear;
+  max-width: 1196px;
+  @include elevation-mixin(12);
+}
+
+.header__inner-container {
+  display: flex;
+  background-image: linear-gradient(to bottom, $accent-color 50%, darken($accent-color, 20%));
+  margin: 4px 4px 8px 4px;
+  border-radius: 16px;
+  justify-content: center;
+  @include elevation-mixin(2)
+}
+
+.header__inner-inner-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 4px 8px;
+  min-height: 69px;
+  max-width: 1000px;
+}
+
+.header__title {
+  margin: 0;
+  font-family: 'Luciest guy';
+  letter-spacing: 2px;
+  text-decoration: underline;
+  color: $main-color;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+  transform-origin: 25% 50%;
+  transform: scale(0);
+  transition: transform 500ms cubic-bezier(.36,.6,.66,1.69);
+  @media (min-width: 47rem) {
+    font-size: 2.4em;
+  }
+}
+
+.header__btn-entry {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0 cubic-bezier(.36,.6,.66,1.69),
+              opacity 0 ease-out;
+}
+
+.header__btn-entry-start {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 400ms cubic-bezier(.36,.6,.66,1.69),
+              opacity 300ms ease-out;
+}
+
+.header__burgerland-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  background: transparent url(/assets/images/burgerland_button.svg) center/cover border-box no-repeat;
+  padding-bottom: 100%;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7));
+  width: 60px;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 500ms cubic-bezier(.36,.6,.66,1.69);
+
+  @media (min-width: 47rem) {
+    display: none;
+  }
+}
+
+.header__auth-btn-group {
+  display: none;
+
+  & > .btn {
+    text-align: center;
+  }
+
+  @media (min-width: 47rem) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: max-content;
+  }
+}
+
+.heder__auth-btn-group-logged {
+  grid-template-columns: auto 1fr 1fr;
+}
+
+.header__greeter-message {
+  align-self: center;
+  font-size: 1.3em;
+  margin-right: 10px;
+  color: $main-color;
+  text-decoration: underline;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.header__burgerland-button:active {
+  @include animations.button-jump-mixin;
+}
+
+.header__dropdown-menu-container {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+  transform-origin: center top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 300ms ease-out,
+              opacity 200ms ease-out;
+
+  @media (min-width: 47rem) {
+    display: none;
+  }
+}
+
+.header__dropdown-menu-container.open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+  transition: transform 300ms ease-out,
+              opacity 200ms 100ms ease-out;
+}
+
+.header__dropdown-menu {
+  width: 96%;
+  border-radius: 16px;
+  @include elevation-mixin(2);
+  background-image: linear-gradient(to bottom, $accent-color, darken($accent-color, 20%));
+  padding: 16px;
+  font-size: 1.2em;
+  max-width: 370px;
+
+  & > nav {
+    display: block;
+    width: 100%;
+  }
+
+  & > nav > ul {
+    display: grid;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & > li {
+      width: 100%;
+      border-bottom: 1px solid $accent-color;
+      padding: 8px;
+
+      &:first-of-type {
+        border-top: 1px solid $accent-color;
+      }
+    }
+
+    & > li > a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+}
+
+.header__btn-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: .7em;
+  gap: 4px;
+  margin-bottom: 16px;
+
+  & > .btn {
+    grid-column: 2 / span 1;
+    text-align: center;
+  }
+}
+
+.header__close-button {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+  background-color: transparent;
+  color: $main-color;
+  justify-self: flex-start;
+  align-self: flex-start;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.header__cart-btn-container {
+  display: grid;
+  justify-items: center;
+  font-size: .7em;
+  margin: 24px 0;
+
+  & > .btn {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    & > i {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.header__link-icon {
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.header__burger-icon {
+  background: url(/assets/images/burger_image.png) center/contain no-repeat border-box;
+}
+
+.header__salad-icon {
+  background: url(/assets/images/salad.svg) center/contain no-repeat border-box;
+}
+
+.header__drink-icon {
+  background: url(/assets/images/soda-cup.png) center/contain no-repeat border-box;
+}
+
+.header__ice-creem-icon {
+  background: url(/assets/images/ice_cream.png) center/contain no-repeat border-box;
+}
+
+.header__others-icon {
+  background: url(/assets/images/fries.png) center/contain no-repeat border-box;
+}

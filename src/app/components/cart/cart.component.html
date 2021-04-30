@@ -1,0 +1,24 @@
+<app-clear-cart-modal #clearCartModal
+                      (clearCart)="cartStateManager.clearCart();
+                                   markForCheckLocaly();"></app-clear-cart-modal>
+<app-order-modal #orderModal
+                 (makeOrder)="makeOrder()"></app-order-modal>
+
+<h1 class="cart__greater">Your Cart</h1>
+
+<ng-container *ngIf="cartStateManager.state!.length > 0 else cartEmptyTemplate">
+  <app-cart-item *ngFor="let item of cartStateManager.state; trackBy: cartStateManager.trackFn, let i = index"
+                 [cartItem]="item"
+                 (increase)="cartStateManager.increaseItemQuantity(i)"
+                 (decrease)="cartStateManager.decraseItemQuantity(i)"
+                 (delete)="cartStateManager.removeItemFromCart(i);
+                           markForCheckLocaly()"></app-cart-item>
+</ng-container>
+<ng-template #cartEmptyTemplate>
+  <h1 style="text-align: center;">No items in cart.</h1>
+</ng-template>
+
+<app-cart-panel *ngIf="cartStateManager.state!.length > 0"
+                [cartStateManager]="cartStateManager"
+                (clearCart)="clearCartModal.open = true"
+                (makeOrder)="orderModal.open = true"></app-cart-panel>

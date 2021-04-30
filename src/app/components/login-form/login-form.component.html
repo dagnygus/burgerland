@@ -1,0 +1,53 @@
+<form class="burgerland-form"
+      #loginForm="ngForm"
+      [rxwebForm]="loginForm"
+      (input)="markForCheckLocaly()"
+      (ngSubmit)="authStateManager.signIn()">
+  <p style="text-align: center;">
+    Complate the form to sing in.<br>
+    If you not have account, please <a class="link" routerLink="/register">register</a> here.
+  </p>
+  <div class="login-form__warning-container"
+       *ngIf="authStateManager.failedToLogin$ | dnAsync:this">
+    <h3>Failed to log in! Check your email and password!</h3>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="email">E-mail Address</label>
+    <input type="text"
+           name="email"
+           #emailInput="ngModel"
+           [(ngModel)]="authStateManager.email"
+           [rxrequired]="{ message: 'Address E-mail is required!' }"
+           [rxemail]="{ message: 'Incorect format of E-mail Address!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="emailInput.invalid && emailInput.touched && emailInput.dirty">
+      <li *dnngFor="let prop in emailInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__input-group">
+    <label for="password">Password</label>
+    <input type="password"
+           name="password"
+           #passwordInput="ngModel"
+           [(ngModel)]="authStateManager.password"
+           [rxrequired]="{ message: 'Password is required!' }"
+           (blur)="markForCheckLocaly()">
+    <ul *ngIf="passwordInput.invalid && passwordInput.touched && passwordInput.dirty">
+      <li *dnngFor="let prop in passwordInput.errors">
+        <small>{{ prop.message }}</small>
+      </li>
+    </ul>
+  </div>
+  <div class="burgerland-form__buttons">
+    <div class="burgerland-form__buttons-container">
+      <button class="btn btn-main-gradient"
+              type="submit"
+              (click)="authStateManager.canExecuteSignIn = !loginForm.invalid;
+                       $any(this).submitButtonClick(loginForm);"
+              [disabled]="!loginForm.valid">Sign In</button>
+      <a class="btn btn-accent-gradient" routerLink="/">Cancel</a>
+    </div>
+  </div>
+</form>

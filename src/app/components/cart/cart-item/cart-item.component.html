@@ -1,0 +1,29 @@
+<div class="cart-item__image-container">
+  <div class="cart-item__image-frame">
+    <div class="cart-item__image"
+         [style.background-image]="'url(' + cartItem?.imageUrl + ')'"></div>
+  </div>
+</div>
+<div class="cart-item__btn-container">
+  <button class="cart-item__btn-delete"
+          (click)="$any(this).onDeleteClick()">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+  <button class="cart-item__btn"
+          (click)="$any(this)._increase.emit();
+                   markForCheckLocaly()">
+    <i class="fas fa-plus"></i>
+  </button>
+  <div class="cart-item__count">{{cartItem?.quantity}}</div>
+  <button class="cart-item__btn"
+          (click)="$any(this)._decrease.emit();
+                   markForCheckLocaly()">
+    <i class="fas fa-minus"></i>
+  </button>
+</div>
+<div class="cart-item__name-container">
+  {{ cartItem?.name }}
+</div>
+<div class="cart-item__price-container">
+  Price: {{ cartItem?.price | itemPrice:cartItem?.quantity}}$
+</div>
