@@ -3,7 +3,7 @@ import { ProductModel } from './../models/product-model';
 import { DnngStateManager } from '../state-manager-base/dnng-state-manager';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { delay, first } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 @Injectable()
 export class ProductsStateManager extends DnngStateManager<ProductModel[]> {
@@ -29,6 +29,6 @@ export class ProductsStateManager extends DnngStateManager<ProductModel[]> {
 
   protected provideInitialState(): Observable<ProductModel[]> | null {
     if (!this._url) { return null; }
-    return this._httpClient.get<ProductModel[]>(this._url).pipe(delay(2000), first());
+    return this._httpClient.get<ProductModel[]>(this._url).pipe(first());
   }
 }
